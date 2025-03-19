@@ -1,0 +1,5 @@
+ST1 StandardowO Coś dłuGIego, brzEczYszczykiewicz EN1
+ST2 Wzorce projektowe są wymagane nawet gdy są one zakazane. EN2
+ST3 Programowanie jest dla każdego chyba że masz za wysokie ego. EN3
+ST4 Coś ze Z$nakiem specjal&ym bo czemU nie1234p. EN4
+
