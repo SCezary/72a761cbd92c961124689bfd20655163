@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <div class="container mt-2 mb-2">
+        <div class="d-flex gap-2">
+            <select class="form-select w-25" id="user-table-page">
+                <option value="10" selected>10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+            </select>
+            <input type="text" class="form-control" aria-label="search" placeholder="Search Name" id="search-input" />
+            <button class="btn btn-secondary" id="search-button">Search</button>
+        </div>
+        <div class="table-wrapper mb-2">
+            <div class="loader hidden" id="table-spinner">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only"></span>
+                </div>
+            </div>
+            <table class="table mt-1 table-hover" id="user-table">
+                <thead>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Status</th>
+                </thead>
+                <tbody id="user-table-body">
+                <tr id="user-row-template" class="user-row hidden">
+                    <td id="user-id"></td>
+                    <td id="user-name"></td>
+                    <td id="user-email"></td>
+                    <td id="user-gender"></td>
+                    <td id="user-status"></td>
+                </tr>
+                </tbody>
+            </table>
+            <p>Table is caches for 30 seconds.</p>
+            <span data-page="1" id="current-page">Page: 1</span>
+        </div>
+        <nav id="user-table-pagination">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#" id="prev-page-button">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#" id="next-page-button">Next</a></li>
+            </ul>
+        </nav>
+        {% include 'user/posts.html.twig' %}
+        <a class="btn btn-success" href="/create">Create User</a>
+    </div>
+{% endblock %}

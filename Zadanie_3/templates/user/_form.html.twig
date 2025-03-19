@@ -1,0 +1,32 @@
+<form class="user-form mt-2" id="user-form" data-user="">
+    <div class="mb-3">
+        <label for="input-name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="input-name" name="name" aria-describedby="name" required value="{{ user.name|default('') }}">
+        <span class="error-message" id="error-name"></span>
+    </div>
+    <div class="mb-3">
+        <label for="input-email" class="form-label">Email</label>
+        <input email="text" class="form-control" id="input-email" name="email" aria-describedby="email" value="{{ user.email|default('') }}">
+        <span class="error-message" id="error-email"></span>
+    </div>
+    <div class="mb-3">
+        <label for="user-form-gender" class="form-label">Gender</label>
+        <select class="form-control" id="user-form-gender" name="gender" required>
+            <option value="male" {{ user is defined ? (user.gender == 'make' ? 'selected' : '') : 'selected' }}>Male</option>
+            <option value="female" {{ user is defined and user.gender == 'female' ? 'selected' : '' }}>Female</option>
+        </select>
+        <span class="error-message" id="error-gender"></span>
+    </div>
+    <div class="mb-3">
+        <label for="user-form-status" class="form-label">Status</label>
+        <select class="form-control" id="user-form-status" name="status" required>
+            <option value="active" {{ user is defined ? (user.status == 'active' ? 'selected' : '') : 'selected' }}>Active</option>
+            <option value="inactive" {{ user is defined and user.status == 'inactive' ? 'selected' : '' }}>Inactive</option>
+        </select>
+        <span class="error-message" id="error-status"></span>
+    </div>
+    {% if user is defined %}
+        <input type="hidden" value="{{ user.id }}" id="user-form-id" />
+    {% endif %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

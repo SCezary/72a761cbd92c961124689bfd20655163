@@ -1,0 +1,57 @@
+@import "~bootstrap";
+
+body {
+    /*background-color: lightgray;*/
+}
+
+.hidden {
+    display: none !important;
+}
+
+header {
+    height: 50px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.table-wrapper {
+    position: relative;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.2);
+    backdrop-filter: blur(2px);
+    border-radius: 5px;
+}
+
+.user-post-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-post {
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#user-table-body #user-status,
+#user-table-body #user-gender {
+    text-transform: uppercase;
+}
+
+#user-table-body .user-row:hover {
+    cursor: pointer;
+}
+
+.error-message {
+    color: #dc3545;
+}
